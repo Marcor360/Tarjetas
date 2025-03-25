@@ -1,6 +1,5 @@
 <?php
 require 'includes/funciones.php';
-
 incluirTemplate('header');
 ?>
 
@@ -36,9 +35,7 @@ incluirTemplate('header');
 
             <button type="submit">Generar Tarjeta</button>
         </form>
-
     </div>
-
 </section>
 </body>
 

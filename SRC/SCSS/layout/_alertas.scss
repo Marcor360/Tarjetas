@@ -1,0 +1,59 @@
+@use 'sass:color';
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+// Estilos para alertas
+.alerta {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+    font-weight: v.$bold;
+    text-align: center;
+
+    &.error {
+        background-color: color.scale(v.$red, $lightness: 70%);
+        border: 1px solid v.$red;
+        color: color.adjust(v.$red, $lightness: -20%);
+    }
+
+    &.exito {
+        background-color: color.scale(v.$green, $lightness: 80%);
+        border: 1px solid v.$green;
+        color: color.adjust(v.$green, $lightness: -20%);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+
+        li {
+            margin-bottom: 0.5rem;
+            font-weight: v.$regular;
+        }
+    }
+}
+
+// Estilos para botones de acción
+.botones-accion {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.boton {
+    @include m.boton(v.$secondary, inline-block);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &.boton-verde {
+        @include m.boton(v.$primary, inline-block);
+    }
+}

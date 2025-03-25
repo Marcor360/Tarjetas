@@ -1,0 +1,177 @@
+@use 'sass:color';
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.alerta {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+    font-weight: v.$bold;
+    text-align: center;
+
+    &.error {
+        background-color: color.scale(v.$red, $lightness: 70%);
+        border: 1px solid v.$red;
+        color: color.adjust(v.$red, $lightness: -20%);
+    }
+
+    &.exito {
+        background-color: color.scale(v.$green, $lightness: 80%);
+        border: 1px solid v.$green;
+        color: color.adjust(v.$green, $lightness: -20%);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+
+        li {
+            margin-bottom: 0.5rem;
+            font-weight: v.$regular;
+        }
+    }
+}
+
+.botones-accion {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.boton {
+    @include m.boton(v.$secondary, inline-block);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &.boton-verde {
+        @include m.boton(v.$primary, inline-block);
+    }
+}
+
+.tarjeta-presentacion {
+    max-width: 60rem;
+    margin: 2rem auto;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 2rem;
+    border: 1px solid #eee;
+}
+
+.tarjeta-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @include m.tablet {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+.tarjeta-imagen {
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid v.$primary;
+
+    @include m.tablet {
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.tarjeta-info {
+    h2 {
+        margin: 0;
+        color: v.$primary;
+        font-size: 2.4rem;
+    }
+
+    .puesto {
+        color: v.$gris;
+        font-size: 1.8rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+}
+
+.tarjeta-contacto {
+    margin: 2rem 0;
+
+    p {
+        margin: 0.5rem 0;
+
+        strong {
+            color: v.$secondary;
+        }
+    }
+}
+
+.tarjeta-qr {
+    text-align: center;
+    margin-top: 2rem;
+
+    .qr-placeholder {
+        width: 10rem;
+        height: 10rem;
+        background-color: #f8f9fa;
+        border: 1px dashed #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: v.$gris;
+        }
+    }
+}
+
+// Añade esto en el archivo SRC/SCSS/layout/_tarjeta.scss
+
+.tarjeta-logo {
+    max-width: 10rem;
+    max-height: 5rem;
+    object-fit: contain;
+    margin: 1rem 0;
+
+    @include m.tablet {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        margin: 0;
+    }
+}
+
+// Ajusta la estructura de la tarjeta para acomodar el logo
+.tarjeta-presentacion {
+    // ... código existente
+    position: relative; // Asegúrate de que esto esté presente
+    padding: 2rem;
+    // ... resto del código
+}
+
+@media print {
+
+    .botones-accion,
+    .alerta,
+    header {
+        display: none;
+    }
+}
