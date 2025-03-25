@@ -1,0 +1,32 @@
+{
+  "name": "tarjetas-dijitales",
+  "version": "1.0.0",
+  "description": "Tarjeta de presentacion, personal de Grupo \"ALGEDIS\"",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Null"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "GULP",
+    "REACT"
+  ],
+  "author": "Marco Antonio Rulfo Castro",
+  "license": "ISC",
+  "devDependencies": {
+    "glob": "^11.0.1",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.86.0",
+    "sharp": "^0.33.5"
+  }
+}

@@ -1,0 +1,29 @@
+@use 'sass:color';
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'base/globales' as g;
+
+header {
+    background-color: color.adjust(v.$secondary, $lightness: -20%);
+    padding: 1rem 0;
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        color: v.$blanco;
+        font-size: 2.5rem;
+        transition: color .3s ease;
+
+        &:hover {
+
+            color: v.$primary;
+            background-color: rgba(0, 0, 0, 0.171);
+            border-radius: .5rem;
+        }
+    }
+}
