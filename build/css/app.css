@@ -502,14 +502,15 @@ nav a:hover {
   background: rgb(0, 123, 255);
 }
 
-.formulario {
-  padding: 15px;
+@media (min-width: 768px) {
+  .formulario {
+    padding: 15px;
+  }
+  .formulario input,
+  .formulario button {
+    font-size: 14px;
+  }
 }
-.formulario input,
-.formulario button {
-  font-size: 14px;
-}
-
 .alerta {
   padding: 1.5rem;
   margin: 1.5rem 0;

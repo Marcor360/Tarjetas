@@ -84,11 +84,13 @@
 
 // Responsividad
 
-.formulario {
-    padding: 15px;
+@include m.tablet {
+    .formulario {
+        padding: 15px;
 
-    input,
-    button {
-        font-size: 14px;
+        input,
+        button {
+            font-size: 14px;
+        }
     }
 }
